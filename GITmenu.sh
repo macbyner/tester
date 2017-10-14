@@ -15,13 +15,14 @@ echo "1.  git init"
 echo "2.  git status"
 echo "3.  git add "
 echo "4.  git status"
-echo "5.  git commit -m Add bash shell scripts from jbinstalls"
-echo "6.  git log"
-echo "7.  git remote add macbyner https://github.com/"
-echo "8.  love"
-echo "9.  git config to Set global user name "
-echo "10.  git config to Set global user.email"
-echo "11. Check Your Settings"
+echo "5.  git check-ignore"
+echo "6.  git commit -m "\"" you have to add comments for the commit"\"""
+echo "7.  git log"
+echo "8.  git remote add macbyner https://github.com/"
+echo "9.  love"
+echo "10.  git config to Set global user name "
+echo "11.  git config to Set global user.email"
+echo "12. Check Your Settings"
 echo
 
 echo -n "Enter your choice, or X for exit: "
@@ -50,28 +51,35 @@ case $choice in
      git status
      ;;
      5)
-     git commit -m "Add bash shell scripts from jbinstalls"
+     echo "please enter the files to check-ignore IE: *.sh"
+     read GITIGNORE
+     git check-ignore $GITIGNORE
      ;;
      6)
-     git log
+     echo "please enter the comment to add to the git commit -m command"
+     read GITCOMMIT
+     git commit -m "$GITCOMMIT"
      ;;
      7)
-     $FORTUNE magic
+     git log
      ;;
      8)
-     $FORTUNE love
+     $FORTUNE magic
      ;;
      9)
+     $FORTUNE love
+     ;;
+     10)
      echo "please enter your user name"
      read GITUSER
      git config --global user.name $GITUSER
      ;;
-     10)
+     11)
      echo "please enter your email address"
      read GITEMAIL
      git config --global user.email $GITEMAIL
      ;;
-     11)
+     12)
      git config --list 
      ;;
      X)
