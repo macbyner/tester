@@ -1,0 +1,4 @@
+echo " install mysql "
+read -p "Press [Enter] key to continue..."
+#
+

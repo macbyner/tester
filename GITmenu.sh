@@ -18,8 +18,8 @@ echo "4.  git status"
 echo "5.  git check-ignore"
 echo "6.  git commit -m "\"" you have to add comments for the commit"\"""
 echo "7.  git log"
-echo "8.  git remote add macbyner https://github.com/"
-echo "9.  love"
+echo "8.  git remote add origin --- add remote URLK ---"
+echo "9.  git diff --staged ---- or not -----"
 echo "10.  git config to Set global user name "
 echo "11.  git config to Set global user.email"
 echo "12. Check Your Settings"
@@ -64,10 +64,14 @@ case $choice in
      git log
      ;;
      8)
-     $FORTUNE magic
+     echo "please enter the URL of the remote" 
+     read GITREMOTE
+     git remote add origin https://github.com/macbyner/$GITREMOTE
      ;;
      9)
-     $FORTUNE love
+     echo "you can add to a diff parm like --staged do it now or leave blank"
+     read GITDIFF
+     git diff "$GITDIFF"
      ;;
      10)
      echo "please enter your user name"
